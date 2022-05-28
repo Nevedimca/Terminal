@@ -1,0 +1,278 @@
+Dz1 - Oleksandr O. Vodafon
+
+	1) Посмотреть где я 
+Команда: pwd
+Пример:
+Oleksandrs-iMac:dz1 macssd$ pwd
+/Volumes/Mediya SSD/Code/Terminal/dz1
+
+
+	2) Создать папку
+Команда: mkdir
+Пример: 
+Oleksandrs-iMac:dz1 macssd$ mkdir f1
+Oleksandrs-iMac:dz1 macssd$ ls -la
+total 0
+drwxr-xr-x   3 macssd  admin  102 May 21 15:02 .
+drwxr-xr-x  13 macssd  admin  442 May 21 15:00 ..
+drwxr-xr-x   2 macssd  admin   68 May 21 15:02 f1
+
+
+	3) Зайти в папку
+Команда: cd
+Пример:
+Oleksandrs-iMac:dz1 macssd$ cd f1
+Oleksandrs-iMac:f1 macssd$ pwd
+/Volumes/Mediya SSD/Code/Terminal/dz1/f1
+
+
+	4) Создать 3 папки
+Команда: mkdir
+Пример:
+Oleksandrs-iMac:f1 macssd$ mkdir f1_1 f1_2 f1_3
+Oleksandrs-iMac:f1 macssd$ ls -la
+total 0
+drwxr-xr-x  5 macssd  admin  170 May 21 15:05 .
+drwxr-xr-x  3 macssd  admin  102 May 21 15:02 ..
+drwxr-xr-x  2 macssd  admin   68 May 21 15:05 f1_1
+drwxr-xr-x  2 macssd  admin   68 May 21 15:05 f1_2
+drwxr-xr-x  2 macssd  admin   68 May 21 15:05 f1_3
+
+
+	5) Зайти в любоую папку
+Команда: cd
+Пример:
+Oleksandrs-iMac:dz1 macssd$ pwd
+/Volumes/Mediya SSD/Code/Terminal/dz1
+Oleksandrs-iMac:dz1 macssd$ cd f1/f1_2
+Oleksandrs-iMac:f1_2 macssd$ pwd
+/Volumes/Mediya SSD/Code/Terminal/dz1/f1/f1_2
+
+
+	6) Создать 5 файлов (3 txt, 2 json)
+Команда: touch
+Пример:
+Oleksandrs-iMac:f1_2 macssd$ touch f1_2-1.txt f1_2-2.txt f1_2-3.txt f1_2-4.json f1_2-5.json
+Oleksandrs-iMac:f1_2 macssd$ ls -l
+total 0
+-rw-r--r--  1 macssd  admin  0 May 21 15:10 f1_2-1.txt
+-rw-r--r--  1 macssd  admin  0 May 21 15:10 f1_2-2.txt
+-rw-r--r--  1 macssd  admin  0 May 21 15:10 f1_2-3.txt
+-rw-r--r--  1 macssd  admin  0 May 21 15:10 f1_2-4.json
+-rw-r--r--  1 macssd  admin  0 May 21 15:10 f1_2-5.json
+
+
+	7) Создать 3 папки
+Команда: mkdir
+Пример:
+Oleksandrs-iMac:dz1 macssd$ mkdir f2 f3 f4
+Oleksandrs-iMac:dz1 macssd$ ls -l
+total 0
+drwxr-xr-x  9 macssd  admin  306 May 21 15:26 f1
+drwxr-xr-x  2 macssd  admin   68 May 21 15:28 f2
+drwxr-xr-x  2 macssd  admin   68 May 21 15:28 f3
+drwxr-xr-x  2 macssd  admin   68 May 21 15:28 f4
+
+
+	8. Вывести список содержимого папки
+Команда: ls -l (-la -a)
+Пример: 
+Oleksandrs-iMac:dz1 macssd$ ls -l f1/f1_2
+total 0
+-rw-r--r--  1 macssd  admin   0 May 21 15:10 f1_2-1.txt
+-rw-r--r--  1 macssd  admin   0 May 21 15:10 f1_2-2.txt
+-rw-r--r--  1 macssd  admin   0 May 21 15:10 f1_2-3.txt
+-rw-r--r--  1 macssd  admin   0 May 21 15:10 f1_2-4.json
+-rw-r--r--  1 macssd  admin   0 May 21 15:10 f1_2-5.json
+drwxr-xr-x  2 macssd  admin  68 May 21 15:13 f2_1
+drwxr-xr-x  2 macssd  admin  68 May 21 15:13 f2_2
+drwxr-xr-x  2 macssd  admin  68 May 21 15:13 f2_3
+
+
+	9) + Открыть любой txt файл
+Команда: vim
+Пример: 
+Oleksandrs-iMac:dz1 macssd$ pwd
+/Volumes/Mediya SSD/Code/Terminal/dz1
+Oleksandrs-iMac:dz1 macssd$ vim f1/f1_2/f1_2-1.txt
+
+
+	10) + написать туда что-нибудь, любой текст. - I
+кнопка “I”
+
+	11) + сохранить и выйти.
+Команда :wq
+Проверка документа - cat
+Oleksandrs-iMac:dz1 macssd$ pwd
+/Volumes/Mediya SSD/Code/Terminal/dz1
+Oleksandrs-iMac:dz1 macssd$ cat f1/f1_2/f1_2-1.txt
+1
+2
+3
+
+
+q
+w
+e
+
+
+hello 
+
+	12) Выйти из папки на уровень выше 
+Команда: cd ..
+Пример:
+Oleksandrs-iMac:dz1 macssd$ pwd
+/Volumes/Mediya SSD/Code/Terminal/dz1
+Oleksandrs-iMac:dz1 macssd$ cd ..
+/Volumes/Mediya SSD/Code/Terminal
+
+
+
+	13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+Команда: mv
+Пример: 
+Oleksandrs-iMac:dz1 macssd$ pwd
+/Volumes/Mediya SSD/Code/Terminal/dz1
+Oleksandrs-iMac:dz1 macssd$ mv f1/f1_2/f1_2-1.txt f1/f1_2/f1_2-2.txt  f2/
+Oleksandrs-iMac:dz1 macssd$ ls -l f2
+total 8
+-rw-r--r--  1 macssd  admin  23 May 21 15:35 f1_2-1.txt
+-rw-r--r--  1 macssd  admin   0 May 21 15:10 f1_2-2.txt
+
+
+	14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+Команда: cp
+Пример:
+Oleksandrs-iMac:dz1 macssd$ pwd
+/Volumes/Mediya SSD/Code/Terminal/dz1
+Oleksandrs-iMac:dz1 macssd$ cp f1/f1_2/f1_2-3.txt f1/f1_2/f1_2-4.json f3/
+Oleksandrs-iMac:dz1 macssd$ ls -l f3
+total 0
+-rw-r--r--  1 macssd  admin  0 May 21 20:40 f1_2-3.txt
+-rw-r--r--  1 macssd  admin  0 May 21 20:40 f1_2-4.json
+
+
+	15) Найти файл по имени
+Команда: find -name
+Пример: 
+Oleksandrs-iMac:dz1 macssd$ pwd
+/Volumes/Mediya SSD/Code/Terminal/dz1
+Oleksandrs-iMac:dz1 macssd$ find f1/ -name f1_2-5.json
+f1//f1_2/f1_2-5.json
+f1//f4/f1_2-5.json
+
+
+	16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+Команда: grep
+Пример: 
+Oleksandrs-iMac:dz1 macssd$ cat f2/f1_2-2.txt
+Hello1
+Hello2
+Hello3
+Hello4
+Hello5
+Hello10
+Hello101
+HELlo1
+
+heLLO1Oleksandrs-iMac:dz1 macssd$ grep -w Hello1 f2/f1_2-2.txt
+Hello1
+
+
+	17) вывести несколько первых строк из текстового файла
+Команда: head
+Пример: 
+Oleksandrs-iMac:dz1 macssd$ cat f2/f1_2-2.txt
+Hello1
+Hello2
+Hello3
+Hello4
+Hello5
+Hello10
+Hello101
+HELlo1
+heLLO1
+Hello6
+Hello7
+Hello8
+
+Oleksandrs-iMac:dz1 macssd$ head -3 f2/f1_2-2.txt
+Hello1
+Hello2
+Hello3
+
+18) вывести несколько последних строк из текстового файла
+Команда: tail
+Пример: 
+Oleksandrs-iMac:dz1 macssd$ cat f2/f1_2-2.txt
+Hello1
+Hello2
+Hello3
+Hello4
+Hello5
+Hello10
+Hello101
+HELlo1
+heLLO1
+Hello6
+Hello7
+Hello8
+
+Hello9Oleksandrs-iMac:dz1 macssd$ tail -n4  f2/f1_2-2.txt
+Hello6
+Hello7
+Hello8
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+Команда: less
+Пример: 
+Oleksandrs-iMac:dz1 macssd$ less  f2/f1_2-2.txt
+
+
+20) вывести дату и время
+Команда: date
+Пример: 
+Oleksandrs-iMac:dz1 macssd$ date +"%H:%M %d/%m/%Y"
+15:50 22/05/2022
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+Команда: curl
+Пример: 
+Oleksandrs-iMac:dz1 macssd$ curl http://162.55.220.72:5005/terminal-hw-request
+{
+  "Intro": "Hello!! This is your the first response from server", 
+  "Tasks": {
+    "Task_1": "Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)", 
+    "result": [
+      "Your_String", 
+      "Your_number"
+    ]
+  }
+}
+
+Oleksandrs-iMac:dz1 macssd$ curl "http://162.55.220.72:5005/get_method?name=OleksandrO.Vodahon&age=33"
+[
+  "OleksandrO.Vodahon", 
+  "33"
+]
+
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+	touch scr
+	vim scr
+#!/bin/bash
+mkdir scr1
+cd scr1
+mkdir q1 q2 q3
+cd q1
+touch 1.txt 2.txt 3.txt 4.json 5.json
+mkdir 111 222 333
+ls -l
+mv 1.txt 111/ ; mv 2.txt 222/
+
+	bash scr
+
