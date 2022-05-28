@@ -4,3 +4,4 @@ qwer
 hello
 proverka git fetch
 proverka git fetch 2
+proverka git fetch 3 +git diff
