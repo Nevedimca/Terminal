@@ -5,3 +5,4 @@ hello
 proverka git fetch
 proverka git fetch 2
 proverka git fetch 3 +git diff
+proverka git fetch 4 +git diff
