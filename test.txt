@@ -2,3 +2,4 @@
 qwer
 
 hello
+proverka git fetch
