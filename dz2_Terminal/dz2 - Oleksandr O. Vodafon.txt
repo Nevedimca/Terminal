@@ -148,30 +148,134 @@ Oleksandrs-iMac:dir_1 macssd$ find . -name "tf*.txt"
 ./tf_2.txt
 
  	22. Найти путь к файлам у которых есть  “tf” в названии и буквы в любом регистре.
-Oleksandrs-iMac:dir_1 macssd$ find . -name 'tf*.txt' -exec grep -i -r "sec" {} \;
-./inner_dir_1/tf_3.txt:the second 2
-./inner_dir_1/tf_3.txt:the sec 2
-./inner_dir_1/tf_3.txt:the SeCoNd 2
-./tf_2.txt:- the second 2
-./tf_2.txt:the sec 3
-./tf_2.txt:the seConD 2
+Oleksandrs-iMac:TerminalGIT macssd$ find . -iname "tf*.txt"
+./dz2_Terminal/dir_1/inner_dir_1/tf_3.txt
+./dz2_Terminal/dir_1/inner_dir_1/tf_4.txt
+./dz2_Terminal/dir_1/inner_dir_1/tf_5.txt
+./dz2_Terminal/dir_1/tF_0.txt
+./dz2_Terminal/dir_1/tf_1.txt
+./dz2_Terminal/dir_1/tf_2.txt
 
 
- 23. Найти строки в файлах где есть комбинация букв “sec” в текущей папке
- 24. Найти строки в файлах где есть комбинация букв “sec” в любом регистре в текущей папке
- 25. Найти строки в файлах где есть только комбинация букв “sec” в текущей папке
- 26. Найти строки в файлах где есть только комбинация букв “sec” в любом регистре в текущей папке
- 27. Найти строки в файлах где есть комбинация букв “second” в текущей папке
- 28. Найти строки в файлах где есть комбинация букв “second” в любом регистре в текущей папке
- 29. Найти строки в файлах где есть комбинация букв “second” во всех папках ниже уровнем
- 30. Найти только путь и название файла в строках которых есть комбинация букв “second” в текущей папке
- 31. Найти все строки во всех файлах где нет комбинации “second”
- 32. Найти только название и путь к файлам где нет комбинации “second”
- 33. Вывести в терминал 4 последних строк любого текстового файла
- 34. Вывести в терминал 4 первые строки любого текстового файла.
- 35. Команда в одну строку. Создать папку и создать текстовый файл с содержиммым.
- 36. Команда в одну строку. Переместить в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
- 37. Команда в одну строку. Скопировать в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
- 38. Команда в одну строку. Найти все строки c “sec” во всех текстовых файлах, скопировать и вставить эти строки в один новый созданный текстовый файл.
- 39. Команда в одну строку. Удалить текстовые файлы у которых в содержимом есть слово “sec”
- 40. Просто вывести в терминал строку “Good job!!”
+	23. Найти строки в файлах где есть комбинация букв “sec” в текущей папке
+Oleksandrs-iMac:dz2_terminal macssd$ find dir_1/ -maxdepth 1  -iname 'tf*.txt' -exec grep "sec" {} \;
+- the second 2
+the sec 3
+
+
+ 	24. Найти строки в файлах где есть комбинация букв “sec” в любом регистре в текущей папке
+Oleksandrs-iMac:dz2_terminal macssd$ find dir_1/ -maxdepth 1  -iname 'tf*.txt' -exec grep -i  "sec" {} \;
+- the second 2
+the sec 3
+the seConD 2
+
+ 	25. Найти строки в файлах где есть только комбинация букв “sec” в текущей папке
+Oleksandrs-iMac:dz2_terminal macssd$ find dir_1/ -maxdepth 1  -iname 'tf*.txt' -exec grep -w  "sec" {} \;
+the sec 3
+
+ 	26. Найти строки в файлах где есть только комбинация букв “sec” в любом регистре в текущей папке
+//для примера внесу строку sEc в созданный tF_0.txt//
+Oleksandrs-iMac:dz2_terminal macssd$ find dir_1/ -maxdepth 1  -iname 'tf*.txt' -exec grep -w -i  "sec" {} \;
+sEc
+the sec 3
+
+	 27. Найти строки в файлах где есть комбинация букв “second” в текущей папке
+Oleksandrs-iMac:dz2_terminal macssd$ find dir_1/ -maxdepth 1  -iname 'tf*.txt' -exec grep -w  "second" {} \;
+- the second 2
+
+
+ 	28. Найти строки в файлах где есть комбинация букв “second” в любом регистре в текущей папке
+Oleksandrs-iMac:dz2_terminal macssd$ find dir_1/ -maxdepth 1  -iname 'tf*.txt' -exec grep -w -i "second" {} \;
+- the second 2
+the seConD 2
+
+	 29. Найти строки в файлах где есть комбинация букв “second” во всех папках ниже уровнем
+Oleksandrs-iMac:dz2_terminal macssd$ find . -iname 'tf*.txt' -exec grep -w  "second" {} \;
+the second 2
+- the second 2
+
+	 30. Найти только путь и название файла в строках которых есть комбинация букв “second” в текущей папке
+Oleksandrs-iMac:dz2_terminal macssd$ find dir_1/  -maxdepth 1  -iname 'tf*.txt' -exec grep -w -r -l  "second" {} \;
+dir_1//tf_2.txt
+
+ 	31. Найти все строки во всех файлах где нет комбинации “second”
+Oleksandrs-iMac:dz2_terminal macssd$ find . -iname 'tf*.txt' -exec grep -v  -r  "second" {} \;
+./dir_1/inner_dir_1/tf_3.txt:g
+./dir_1/inner_dir_1/tf_3.txt:h
+./dir_1/inner_dir_1/tf_3.txt:j
+./dir_1/inner_dir_1/tf_3.txt:1
+./dir_1/inner_dir_1/tf_3.txt:2
+./dir_1/inner_dir_1/tf_3.txt:3
+./dir_1/inner_dir_1/tf_3.txt:q
+./dir_1/inner_dir_1/tf_3.txt:w
+./dir_1/inner_dir_1/tf_3.txt:e
+./dir_1/inner_dir_1/tf_3.txt:hello
+./dir_1/inner_dir_1/tf_3.txt:the sec 2
+./dir_1/inner_dir_1/tf_3.txt:the SeCoNd 2
+./dir_1/inner_dir_1/tf_5.txt:01
+./dir_1/inner_dir_1/tf_5.txt:02
+./dir_1/inner_dir_1/tf_5.txt:03
+./dir_1/inner_dir_1/tf_5.txt:04
+./dir_1/inner_dir_1/tf_5.txt:05
+./dir_1/inner_dir_1/tf_5.txt:06
+./dir_1/inner_dir_1/tf_5.txt:07
+./dir_1/inner_dir_1/tf_5.txt:08
+./dir_1/inner_dir_1/tf_5.txt:09
+./dir_1/inner_dir_1/tf_5.txt:10
+./dir_1/inner_dir_1/tf_5.txt:11
+./dir_1/inner_dir_1/tf_5.txt:12
+./dir_1/inner_dir_1/tf_5.txt:13
+./dir_1/tF_0.txt:sEc
+./dir_1/tf_2.txt:- the first 1
+./dir_1/tf_2.txt:- the third 3
+./dir_1/tf_2.txt:the sec 3
+./dir_1/tf_2.txt:the seConD 2
+
+ 	32. Найти только название и путь к файлам где нет комбинации “second”
+Oleksandrs-iMac:dz2_terminal macssd$ find . -iname 'tf*.txt' -exec grep -v  -l  "second" {} \;
+./dir_1/inner_dir_1/tf_3.txt
+./dir_1/inner_dir_1/tf_5.txt
+./dir_1/tF_0.txt
+./dir_1/tf_2.txt
+
+ 	33. Вывести в терминал 4 последних строк любого текстового файла
+Oleksandrs-iMac:dz2_terminal macssd$ tail -n4 dir_1/inner_dir_1/tf_5.txt
+10
+11
+12
+13
+
+ 	34. Вывести в терминал 4 первые строки любого текстового файла.
+Oleksandrs-iMac:dz2_terminal macssd$ head -n4 dir_1/inner_dir_1/tf_5.txt
+01
+02
+03
+04
+
+ 	35. Команда в одну строку. Создать папку и создать текстовый файл с содержиммым.
+Oleksandrs-iMac:dz2_terminal macssd$ mkdir dir_2; cd dir_2;  cat >> tf_6.txt
+01
+02
+q
+e
+^C
+ 
+	36. Команда в одну строку. Переместить в любую одну папку текстовые файлы у которых в содержимом есть слово “sec” 
+//на маке такая связка не работает!!! grep -r -l 'sec' * | xargs mv -t inner_dir_2/
+Только такая 
+ Oleksandrs-iMac:dir_1 macssd$ mv $(grep -r -l 'sec' * ) inner_dir_2/
+
+
+	37. Команда в одну строку. Скопировать в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
+Oleksandrs-iMac:dir_1 macssd$ cp $(grep -r -l 'sec' * ) inner_dir_3/
+
+ 	38. Команда в одну строку. Найти все строки c “sec” во всех текстовых файлах, скопировать и вставить эти строки в один новый созданный текстовый файл.
+Oleksandrs-iMac:dir_1 macssd$ grep -hr sec * > full.txt 
+// как вариант еще рабочий: cat <<< $(find . -iname 'tf*.txt' -exec grep "sec" {} \;)> full.txt
+
+ 	39. Команда в одну строку. Удалить текстовые файлы у которых в содержимом есть слово “sec”
+Oleksandrs-iMac:dir_1 macssd$ grep -lr 'sec' * | xargs rm
+
+ 	40. Просто вывести в терминал строку “Good job!!”
+Oleksandrs-iMac:dir_1 macssd$ echo 'Good job'
+Good job
